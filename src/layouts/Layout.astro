@@ -18,6 +18,33 @@ const { title } = Astro.props;
 	<body>
 		<slot />
 	</body>
+        <footer>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <p>High School Computer Science Club</p>
+            <p>123 Main Street, Anytown USA 12345</p>
+            <p>Email: contact@hscomputerscienceclub.org</p>
+         </div>
+         <div class="col-md-6">
+            <p>Follow us:</p>
+            <ul class="social-icons">
+               <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+               <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+               <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+               <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <p>&copy; 2023 High School Computer Science Club. All rights reserved.</p>
+         </div>
+      </div>
+   </div>
+</footer>
+
+
 </html>
 <style is:global>
 	:root {

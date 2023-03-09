@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from 'accessible-astro-components';
 ---
 
 <Layout title="Landing Page.">
@@ -9,7 +10,22 @@ import Layout from '../layouts/Layout.astro';
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 		</p>
                 <p> This is text. </p>
-	</main>
+		<ul>
+			 <li>
+					  <Card
+						url="/link-to-my-post"
+						img="/assets/post-cover.jpg"
+						title="My Awesome Post"
+						footer="Tony Stark"
+					  >
+						Lorem ipsum dolor sit amet.
+					  </Card>
+			 </li>
+			 <li>
+					  <!-- ... -->
+			 </li>
+		 </ul>
+	 </main>
 </Layout>
 
 <style>

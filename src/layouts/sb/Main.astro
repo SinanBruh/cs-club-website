@@ -7,7 +7,7 @@ export interface Props {
 
 const { title } = Astro.props as Props;
 
-const stars = fetch('https://api.github.com/repos/EnokiUN/site')
+const stars = fetch('https://api.github.com/repos/CS-Projects-1/cs-club-website')
   .then(res => res.json())
   .then(res => res.stargazers_count);
 ---
@@ -32,7 +32,7 @@ const stars = fetch('https://api.github.com/repos/EnokiUN/site')
   <body>
     <slot />
     <footer>
-      <p>This website is on <a href="https://github.com/EnokiUN/site">GitHub <Icon name="akar-icons:github-fill" color=white /></a> | <span style="color: #cccc55;">{stars}</span> stars<p>
+      <p>This website is on <a href="https://github.com/CS-Projects-1/cs-club-website">GitHub <Icon name="akar-icons:github-fill" color=white /></a> | <span style="color: #cccc55;">{stars}</span> stars<p>
     </footer>
   </body>
 </html>

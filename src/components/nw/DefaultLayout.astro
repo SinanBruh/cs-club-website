@@ -1,0 +1,66 @@
+---
+interface Props {
+  canonical?: string;
+  documentTitle: string;
+  documentDescription?: string;
+}
+
+import "../../styles/nw/reset.css";
+import 'tippy.js/dist/tippy.css';
+import "../../styles/nw/fonts.css";
+import "../../styles/nw/vars.css";
+import "../../styles/nw/global.scss";
+import { yearsInIndustry } from "../../js/yearsInIndustry";
+
+import Header from "../../components/nw/Header.astro"
+import Footer from "../../components/nw/Footer.astro"
+
+const title = import.meta.env.PUBLIC_SITE_NAME;
+const defaultDesc = `Student Programmer, passionate about solving problems with code. Over ${yearsInIndustry} years of experience  in projects, specialising in JavaScript, React & Node.`;
+const site_url = Astro.site;
+const site_domain = import.meta.env.PUBLIC_SITE_DOMAIN;
+
+// Props
+const canonical = Astro.props.canonical || undefined;
+const documentTitle = Astro.props.documentTitle || title;
+const documentDescription = Astro.props.documentDescription || defaultDesc;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    {canonical && <link rel="canonical" href={canonical}>}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <title>{documentTitle}</title>
+    <meta name="description" content={documentDescription}>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={documentDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={site_url + (canonical || "")} />
+    <meta property="og:image" content={site_url + "images/ogimage.png"} />
+
+    <script defer data-domain={site_domain} src="https://plausible.io/js/script.js"></script>
+  </head>
+  <body class="page">
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style lang="scss">
+  main {
+    flex-grow: 1;
+  }
+</style>
+
+<script hoist>
+  import "../../js/buzzwordHighlight.js";
+  import "../../js/mobileMenu.js";
+</script>

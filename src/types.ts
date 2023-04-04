@@ -17,7 +17,6 @@ export type Skills =
   | "MongoDB"
   | "PostgreSQL"
   | "MySQL"
-  | "Selenium"
   | "Mocha"
   | "Linux"
   | "Docker"
@@ -28,6 +27,4 @@ export type Skills =
   | "Adobe Illustrator"
   | "Figma"
   | "WordPress"
-  | "Directus"
-  | "Astro"
-  | "SanityCMS";
+  | "Astro";
